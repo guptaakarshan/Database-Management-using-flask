@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="text-center">
+    <h2>Welcome to Flask Auth System</h2>
+    <div class="mt-4">
+        <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg m-2">
+            Login as Student
+        </a>
+        <a href="{{ url_for('admin_login') }}" class="btn btn-danger btn-lg m-2">
+            Login as Admin
+        </a>
+    </div>
+</div>
+
+{% endblock %}

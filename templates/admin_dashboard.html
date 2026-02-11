@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Welcome Admin {{ session['admin_name'] }}</h3>
+
+<div class="card p-4 shadow">
+    <h5>Add Grades</h5>
+
+    <form method="POST" action="{{ url_for('add_grade') }}">
+        <select name="user_id" class="form-control mb-3" required>
+            <option value="">Select Student</option>
+            {% for id, username in students %}
+            <option value="{{ id }}">{{ username }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="text" name="subject" class="form-control mb-3" placeholder="Subject" required>
+        <input type="number" name="marks" class="form-control mb-3" placeholder="Marks" required>
+
+        <button class="btn btn-success">Add Grade</button>
+    </form>
+</div>
+
+{% endblock %}
