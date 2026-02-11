@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Welcome {{ session['username'] }}</h3>
+
+<div class="card p-3 shadow">
+    <h5>Your Grades</h5>
+    <table class="table table-bordered">
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+        {% for subject, marks in grades %}
+        <tr>
+            <td>{{ subject }}</td>
+            <td>{{ marks }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
